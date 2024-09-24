@@ -76,6 +76,10 @@ public class Main {
                     System.out.println(questao7.diagonalInferiorParaDireita());
                     System.out.println(questao7.diagonalInferiorParaEsquerda());
                     break;
+
+                case 666:
+                    return;
+
                 default:
                     System.out.println("Opção inválida");
             }
