@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -63,10 +64,68 @@ public class Main {
                     System.out.println();
                     System.out.println();
                     System.out.printf("Porcentagem de pessoas com peso menor do que 40 %.2f%%\n",
-                            porcentagemPessoasPesoMenor40*100);
+                            porcentagemPessoasPesoMenor40 * 100);
 
 
                     break;
+
+
+                case 6:
+                    int roundKills, roundDeaths, roundAssists;
+                    int totalKills = 0, totalDeaths = 0, totalAssists = 0;
+                    boolean isWinner = false;
+
+                    while (!isWinner) {
+                        System.out.println("Kills da rodada:");
+                        roundKills = entrada.nextInt();
+                        totalKills += roundKills;
+
+                        System.out.println("Deaths da rodada:");
+                        roundDeaths = entrada.nextInt();
+                        totalDeaths += roundDeaths;
+
+                        System.out.println("Assists da rodada: ");
+                        roundAssists = entrada.nextInt();
+                        totalAssists += roundAssists;
+
+                        System.out.println("Houve vencedor?");
+                        System.out.println("1 - Sim, 2 - Nao");
+                        int vencedor = entrada.nextInt();
+                        if (vencedor == 1) {
+                            isWinner = true;
+                        }
+
+                        if(roundKills < 5) {
+                            System.out.println( roundAssists +
+                                    " kills - NOOB");
+                        } else if (roundKills > 20) {
+                            System.out.println( roundAssists +
+                                    " kills - MASTER");
+                        }
+
+                        if(roundDeaths > 20) {
+                            System.out.println("Houston, we have a problem!!! (deaths = " +
+                                    roundDeaths + ")");
+                        }
+
+                        if(roundAssists > 20) {
+                            System.out.println(roundAssists +
+                                    "round assists - TEAM WORK");
+                        }
+                    }
+
+                    System.out.println("End of the game" +
+                            "\nTotal kills: " +
+                            totalKills +
+                            "\nTotal assists: " +
+                            totalAssists +
+                            "\nTotal deaths " +
+                            totalDeaths);
+
+
+                    break;
+
+
                 case 7:
                     Questao7 questao7 = new Questao7(4);
 
